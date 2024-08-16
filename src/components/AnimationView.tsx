@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import FakeLine from './FakeLine';
-import { TokenizedRaws } from './MagicMotion';
+import type { TokenizedRaw, TokenizedRaws } from './MagicMotion';
 
 const AnimationView = ({
     tokenizedRaws,
@@ -13,7 +13,7 @@ const AnimationView = ({
     return (
         <>
             {tokenizedRaws.map(
-                (tokenizedRaw: any, tokenizedRawIndex: number) => (
+                (tokenizedRaw: TokenizedRaw, tokenizedRawIndex: number) => (
                     <span
                         key={tokenizedRawIndex}
                         style={{ height: unitHeight, display: 'block' }}
