@@ -6,6 +6,10 @@
     "author": "Illia Sheremetov",
     "type": "module",
     "entryPoint": "src/index.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/illia-stv/magic-motion.git"
+    },
     "exports": {
         ".": {
             "import": "./dist/index.es.js",
