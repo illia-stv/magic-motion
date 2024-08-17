@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import FakeLine from './FakeLine';
-import 'prismjs/themes/prism.css';
 
 const Preview = ({ preview, unitWidth, unitHeight, fontSize }: any) => {
     return (

@@ -24,17 +24,11 @@ export type CodeHighlight = {
     customLanguage?: Grammar;
 };
 
-export type Animate = {
-    from: string;
-    to: string;
-};
-
 export interface MagicMotionConfig {
     initialContent: string;
     animateTo?: string;
     duration?: Duration;
     variant?: Variant;
-    animate?: Animate;
     styles?: any;
     fontSize?: number;
     codeHighlight?: CodeHighlight;

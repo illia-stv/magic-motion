@@ -1,8 +1,25 @@
 {
     "name": "magic-motion",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "description": "Bring your code examples to life with the Magic Motion! This lightweight and customizable library allows you to effortlessly add stunning animations to your code snippets in React applications. Perfect for documentation, tutorials, or any project where you want to showcase code in a visually appealing manner.",
+    "author": "Illia Sheremetov",
+    "type": "module",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "entryPoint": "src/index.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.es.js",
+            "require": "./dist/index.umd.js",
+            "types": "./dist/index.d.ts"
+        },
+        "./styles": "./dist/style.css"
+    },
+    "private": false,
+    "files": [
+        "/dist"
+    ],
     "lint-staged": {
         "*": "prettier --ignore-unknown --write"
     },
@@ -19,14 +36,16 @@
         "prettier": "prettier --ignore-unknown --write .",
         "clean": "rimraf node_modules pnpm-lock.yaml dist",
         "validate": "./scripts/validate",
-        "prepare": "husky"
+        "prepare": "husky",
+        "rollup": "rollup -c"
     },
     "dependencies": {
         "diff-match-patch": "^1.0.5",
         "framer-motion": "^11.3.28",
         "prismjs": "^1.29.0",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "vite-plugin-dts": "4.0.3"
     },
     "peerDependencies": {
         "react": "^16.0.0",
@@ -39,7 +58,7 @@
         "@testing-library/user-event": "^14.5.2",
         "@types/diff-match-patch": "^1.0.36",
         "@types/eslint": "^8.56.7",
-        "@types/node": "^22.3.0",
+        "@types/node": "22.4.0",
         "@types/prismjs": "^1.26.4",
         "@types/react": "^18.2.79",
         "@types/react-dom": "^18.2.25",
