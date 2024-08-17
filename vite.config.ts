@@ -11,7 +11,14 @@ export default defineConfig({
             fileName: (format) => `index.${format}.js`,
         },
         rollupOptions: {
-            external: ['react', 'react-dom'],
+            external: [
+                'react',
+                'react-dom',
+                'setuptTests.ts',
+                'eslintrc.cjs',
+                'vitest.config.ts',
+                'prettier.config.js',
+            ],
             output: {
                 globals: {
                     react: 'React',
