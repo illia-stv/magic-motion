@@ -85,7 +85,7 @@ Here are a few examples of how you can use MagicMotion:
 <MagicMotion
     initialContent="const x = 10;"
     animateTo="const y = 20;"
-    duration={{ seconds: 1 }}
+    duration="slow"
     variant="slide"
 />
 ```
@@ -96,10 +96,10 @@ Here are a few examples of how you can use MagicMotion:
 <MagicMotion
     initialContent="function greet() { return 'Hello'; }"
     animateTo="function greet() { return 'Hello, MagicMotion!'; }"
-    duration={{ milliseconds: 500 }}
-    variant="zoom"
+    duration="fast"
+    variant="move instantly"
     fontSize={16}
-    codeHighlight={{ language: 'javascript', theme: 'dark' }}
+    codeHighlight={{ language: 'javascript' }}
 />
 ```
 
