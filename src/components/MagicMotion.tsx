@@ -11,13 +11,17 @@ import {
 import { getPreview } from '../utils/getPreview';
 import { getData } from '../utils/getData';
 
+export type DurationValues = {
+    milliseconds: number;
+    seconds: number;
+};
 export type Duration =
     | 'very slow'
     | 'slow'
     | 'normal'
     | 'fast'
     | 'very fast'
-    | number;
+    | DurationValues;
 export type Variant = 'move later' | 'move instantly';
 export type CodeHighlight = {
     languageName?: string;
@@ -60,7 +64,7 @@ const MagicMotion = ({
     const [isThereMovedItems, setIsThereMovedItems] = useState(true);
     const [tokenizedRaws, setTokenizedRaws] = useState<TokenizedRaws>([]);
     const [preview, setPreview] = useState<PreviewTokenizedRaws | undefined>();
-    const animationDuration = extractDurationValue(duration);
+    const animationDuration = extractDurationValue(duration, variant);
     const {
         unitWidth,
         unitHeight,
@@ -164,11 +168,12 @@ const MagicMotion = ({
             callback();
 
             const nextState = props && props.nextState;
+            const animationDurationInMilliseconds = animationDuration * 1000;
 
             if (nextState) {
                 setTimeout(() => {
                     setAnimationState(nextState);
-                }, animationDuration);
+                }, animationDurationInMilliseconds);
             }
         };
     };

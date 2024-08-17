@@ -4,6 +4,8 @@ import {
     Duration,
     AnimationToken,
     TokenizedRaws,
+    DurationValues,
+    Variant,
 } from '../components/MagicMotion';
 import {
     BIG_SCREEN_FONT_SIZE,
@@ -99,10 +101,27 @@ export const getLanguage = (codeHighlight: CodeHighlight) => {
     }
 };
 
-export const extractDurationValue = (duration?: Duration) => {
+export const extractDurationValue = (
+    duration?: Duration,
+    variant?: Variant,
+) => {
+    const phases = variant === 'move instantly' ? 2 : 3;
+
     const normalizeDuration = (value: number) => {
-        return (value / 3) * 1000;
+        return value / phases;
     };
+
+    const seconds = duration && (duration as DurationValues).seconds;
+
+    if (seconds !== undefined) {
+        return normalizeDuration(seconds);
+    }
+
+    const milliseconds = duration && (duration as DurationValues).milliseconds;
+
+    if (seconds !== milliseconds) {
+        return normalizeDuration(milliseconds / 1000);
+    }
 
     if (duration === 'very slow') {
         return normalizeDuration(VERY_SLOW_DURATION);

@@ -42,7 +42,7 @@ const AnimationView = ({
                                             background: 'unset',
                                         }}
                                         transition={{
-                                            duration: animationDuration / 1000,
+                                            duration: animationDuration,
                                         }}
                                         key={id}
                                     >
