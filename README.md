@@ -22,7 +22,8 @@ To use MagicMotion, simply import the library and pass the the initial content t
 On button click lets assign handler which will update the value of content which we want animate to. Component
 animates whenever the value of `animateTo` is changing.
 
-> **Note:** Update the value of `animateTo` only when animation is finished, to prevent undesired behaviour.
+> **Note:** To prevent undesired behaviour, update the value of `animateTo` only when animation is finished.
+> You could use `onAnimationFinished` callback to verify when animation is finished.
 
 ```jsx
 import { MagicMotion } from 'magic-motion';
