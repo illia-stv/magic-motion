@@ -71,4 +71,5 @@ export type AnimationViewProps = {
     unitWidth: number;
     unitHeight: number;
     fontSize: number;
+    languageName?: string;
 };

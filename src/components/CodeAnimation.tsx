@@ -11,6 +11,7 @@ const CodeAnimation = ({
     fontSize,
     styles,
     preview,
+    languageName,
 }: AnimationViewProps & {
     styles: any;
     preview: PreviewTokenizedRaws | undefined;
@@ -21,6 +22,7 @@ const CodeAnimation = ({
                 overflow: 'auto',
                 ...styles,
             }}
+            className={`language-${languageName}`}
         >
             <code>
                 {preview ? (

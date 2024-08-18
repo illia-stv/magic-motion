@@ -16,28 +16,83 @@ Or with yarn:
 yarn add magic-motion
 ```
 
-## Usage
+## Example with plain text
 
-To use MagicMotion, simply import the library and pass the desired configuration options to the `MagicMotion` component.
+To use MagicMotion, simply import the library and pass the the initial content to the `MagicMotion` component.
+On button click lets assign handler which will update the value of content which we want animate to. Component
+animates whenever the value of `animateTo` is changing.
+
+> **Note:** Update the value of `animateTo` only when animation is finished, to prevent undesired behaviour.
 
 ```jsx
 import { MagicMotion } from 'magic-motion';
 
 const App = () => {
+    const [animateTo, setAnimateTo] = useState();
+
+    const buttonHandler = () => {
+        setAnimateTo('Hello my friends');
+    };
+
     return (
-        <MagicMotion
-            initialContent="console.log('Hello, World!');"
-            animateTo="console.log('Hello, MagicMotion!');"
-            duration="normal"
-            variant="move instantly"
-            onAnimationStart={() => console.log('Animation started!')}
-            onAnimationFinished={() => console.log('Animation finished!')}
-        />
+        <>
+            <MagicMotion
+                initialContent="Hello World!!!"
+                animateTo={animateTo}
+            />
+            <button onClick={buttonHandler}>Animate</button>
+        </>
     );
 };
 
 export default App;
 ```
+
+## Example with code
+
+`MagicMotion` underhood useses `prismjs` for code highlighting, so you could use any theme provided by `prismjs`. Here is example [list of themes](https://github.com/PrismJS/prism-themes/tree/master/themes) which could be used.
+
+So lets install these themes.
+
+```bash
+npm install prism-themes
+```
+
+Or with yarn:
+
+```bash
+yarn add prism-themes
+```
+
+```jsx
+import { MagicMotion } from 'magic-motion';
+import 'prism-themes/themes/prism-one-dark.css';
+
+const App = () => {
+    const [animateTo, setAnimateTo] = useState();
+
+    const buttonHandler = () => {
+        setAnimateTo('const sum = (a, b) => a + b;');
+    };
+
+    return (
+        <>
+            <MagicMotion
+                initialContent="const value = 5;"
+                animateTo={animateTo}
+                codeHighlight={{
+                    languageName: 'javascript',
+                }}
+            />
+            <button onClick={buttonHandler}>Animate</button>
+        </>
+    );
+};
+
+export default App;
+```
+
+Don't forget to define the `langugeName`.
 
 ## Configuration Options
 

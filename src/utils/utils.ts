@@ -22,7 +22,7 @@ import {
 } from './constants';
 
 export const calculateFontSize = () => {
-    if (!window) {
+    if (typeof window === 'undefined') {
         return NORMAL_SCREEN_FONT_SIZE;
     }
 
