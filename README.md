@@ -21,7 +21,7 @@ yarn add magic-motion
 To use MagicMotion, simply import the library and pass the desired configuration options to the `MagicMotion` component.
 
 ```jsx
-import MagicMotion from 'magic-motion';
+import { MagicMotion } from 'magic-motion';
 
 const App = () => {
     return (

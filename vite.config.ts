@@ -1,5 +1,6 @@
 import path from 'path';
 import { defineConfig } from 'vite';
+import viteCompression from 'vite-plugin-compression';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 
@@ -28,8 +29,9 @@ export default defineConfig({
         },
         sourcemap: true,
         emptyOutDir: true,
+        minify: 'esbuild',
     },
-    plugins: [react(), dts()],
+    plugins: [react(), dts(), viteCompression()],
     server: {
         host: true,
         port: 3000,

@@ -1,6 +1,6 @@
 {
     "name": "magic-motion",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "license": "MIT",
     "description": "Bring your code examples to life with the Magic Motion! This lightweight and customizable library allows you to effortlessly add stunning animations to your code snippets in React applications. Perfect for documentation, tutorials, or any project where you want to showcase code in a visually appealing manner.",
     "author": "Illia Sheremetov",
@@ -84,6 +84,7 @@
         "prettier-plugin-tailwindcss": "^0.6.6",
         "typescript": "^5.5.4",
         "vite": "^5.4.0",
+        "vite-plugin-compression": "0.5.1",
         "vitest": "^2.0.5"
     }
 }
