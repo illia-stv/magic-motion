@@ -258,6 +258,7 @@ const MagicMotion = ({
                     fontSize={fontSizeValue}
                     styles={styles}
                     preview={preview}
+                    languageName={codeHighlight && codeHighlight.languageName}
                 />
             )}
             {children}
