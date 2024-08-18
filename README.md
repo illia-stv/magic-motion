@@ -51,7 +51,7 @@ export default App;
 
 ## Example with code
 
-`MagicMotion` underhood useses `prismjs` for code highlighting, so you could use any theme provided by `prismjs`. Here is example [list of themes](https://github.com/PrismJS/prism-themes/tree/master/themes) which could be used.
+`MagicMotion` useses [prismjs](https://prismjs.com/) underhood for code highlighting, so you could use any theme provided by `prismjs`. Here is example [list of themes](https://github.com/PrismJS/prism-themes/tree/master/themes) which could be used.
 
 So lets install these themes.
 
@@ -64,6 +64,8 @@ Or with yarn:
 ```bash
 yarn add prism-themes
 ```
+
+Import styles.
 
 ```jsx
 import { MagicMotion } from 'magic-motion';
@@ -93,7 +95,7 @@ const App = () => {
 export default App;
 ```
 
-Don't forget to define the `langugeName`.
+Don't forget to define the `langugeName` (e.g. javascript, css, html).
 
 ## Configuration Options
 
@@ -132,32 +134,6 @@ Don't forget to define the `langugeName`.
     A callback function triggered when the animation starts.
 
 ## Examples
-
-Here are a few examples of how you can use MagicMotion:
-
-### Simple Code Transition
-
-```jsx
-<MagicMotion
-    initialContent="const x = 10;"
-    animateTo="const y = 20;"
-    duration="slow"
-    variant="move later"
-/>
-```
-
-### Simple Code Transition
-
-```jsx
-<MagicMotion
-    initialContent="function greet() { return 'Hello'; }"
-    animateTo="function greet() { return 'Hello, MagicMotion!'; }"
-    duration="fast"
-    variant="move instantly"
-    fontSize={16}
-    codeHighlight={{ language: 'javascript' }}
-/>
-```
 
 ## API
 
