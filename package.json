@@ -12,8 +12,8 @@
     },
     "exports": {
         ".": {
-            "import": "./dist/index.es.js",
-            "require": "./dist/index.umd.js",
+            "import": "./dist/index.es.js.gz",
+            "require": "./dist/index.umd.js.gz",
             "types": "./dist/index.d.ts"
         },
         "./styles": "./dist/style.css"
