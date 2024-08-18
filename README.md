@@ -18,7 +18,7 @@ yarn add magic-motion
 
 ## Example with plain text
 
-To use MagicMotion, simply import the library and pass the the initial content to the `MagicMotion` component.
+To use MagicMotion, simply import the library and pass the initial content to the `MagicMotion` component.
 On button click lets assign handler which will update the value of content which we want animate to. Component
 animates whenever the value of `animateTo` is changing.
 
