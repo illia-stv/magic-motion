@@ -103,18 +103,18 @@ Don't forget to define the `langugeName` (e.g. javascript, css, html).
 
 The `MagicMotionConfig` interface provides a range of options to customize your code animations. Here's a breakdown of each property:
 
-| Property              | Type                      | Description                                                                                         |
-| --------------------- | ------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------ | ----------- | ------------------ | ------------------------------------------------------------------------------- |
-| `initialContent`      | `string`, required        | The initial code content to be displayed.                                                           |
-| `animateTo`           | `string`, optional        | The target code content to animate to. If not provided, only the initial content will be displayed. |
-| `duration`            | `'very slow'              | 'slow'                                                                                              | 'normal'                                                                                                | 'fast' | 'very fast' | `number`, optional | The duration of the animation. Specify the duration in seconds or milliseconds. |
-| `variant`             | `'move later'             | 'move instantly', optional                                                                          | The animation variant or style. Customize the transition effect between the initial and target content. |
-| `styles`              | `any`, optional           | Custom CSS styles to apply to the animated code content.                                            |
-| `fontSize`            | `number`, optional        | Set the font size of the code content.                                                              |
-| `codeHighlight`       | `CodeHighlight`, optional | Define syntax highlighting options for the code content.                                            |
-| `children`            | `JSX.Element`, optional   | Pass additional JSX elements to be rendered alongside the animated content.                         |
-| `onAnimationFinished` | `function`, optional      | A callback function triggered when the animation finishes.                                          |
-| `onAnimationStart`    | `function`, optional      | A callback function triggered when the animation starts.                                            |
+| Property              | Type                                           | Description                                                                                                    |
+|-----------------------|------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| `initialContent`      | `string`, required                             | The initial code content to be displayed.                                                                      |
+| `animateTo`           | `string`, optional                             | The target code content to animate to. If not provided, only the initial content will be displayed.            |
+| `duration`            | `'very slow' | 'slow' | 'normal' | 'fast' | 'very fast' | `number`, optional | The duration of the animation. Specify the duration in seconds or milliseconds.                             |
+| `variant`             | `'move later' | 'move instantly', optional      | The animation variant or style. Customize the transition effect between the initial and target content.        |
+| `styles`              | `any`, optional                                | Custom CSS styles to apply to the animated code content.                                                       |
+| `fontSize`            | `number`, optional                             | Set the font size of the code content.                                                                         |
+| `codeHighlight`       | `CodeHighlight`, optional                      | Define syntax highlighting options for the code content.                                                       |
+| `children`            | `JSX.Element`, optional                        | Pass additional JSX elements to be rendered alongside the animated content.                                    |
+| `onAnimationFinished` | `function`, optional                           | A callback function triggered when the animation finishes.                                                     |
+| `onAnimationStart`    | `function`, optional                           | A callback function triggered when the animation starts.                                                       |
 
 ## Contributing
 
