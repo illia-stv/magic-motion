@@ -95,7 +95,7 @@ const App = () => {
 export default App;
 ```
 
-Don't forget to define the `langugeName` (e.g. javascript, css, html).
+Don't forget to define the `languageName` (e.g. javascript, css, html).
 
 ## Configuration Options
 
