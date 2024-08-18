@@ -25,6 +25,15 @@
     "lint-staged": {
         "*": "prettier --ignore-unknown --write"
     },
+    "keywords": [
+        "react",
+        "reactjs",
+        "javascript",
+        "animation",
+        "code animation",
+        "text animation",
+        "code snippet"
+    ],
     "scripts": {
         "start": "vite",
         "dev": "vite",
@@ -83,6 +92,8 @@
         "typescript": "^5.5.4",
         "vite": "^5.4.0",
         "vite-plugin-compression": "0.5.1",
-        "vitest": "^2.0.5"
+        "vitest": "^2.0.5",
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0"
     }
 }

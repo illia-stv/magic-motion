@@ -37,8 +37,8 @@ export interface MagicMotionConfig {
     fontSize?: number;
     codeHighlight?: CodeHighlight;
     children?: JSX.Element;
-    onAnimationFinished: (arg: false) => void;
-    onAnimationStart: (arg: true) => void;
+    onAnimationFinished?: (arg: false) => void;
+    onAnimationStart?: (arg: true) => void;
 }
 
 const MagicMotion = ({
@@ -75,8 +75,11 @@ const MagicMotion = ({
         if (animateTo !== undefined) {
             setPreview(undefined);
             processData();
-            onAnimationStart(true);
             setAnimationState('REMOVE');
+
+            if (onAnimationStart) {
+                onAnimationStart(true);
+            }
         }
     }, [animateTo]);
 
@@ -130,7 +133,10 @@ const MagicMotion = ({
 
         if (animationState === 'ANIMATION_FINISHED') {
             setLastAnimatedContent(animateTo);
-            onAnimationFinished(false);
+
+            if (onAnimationFinished) {
+                onAnimationFinished(false);
+            }
         }
     }, [animationState]);
 
