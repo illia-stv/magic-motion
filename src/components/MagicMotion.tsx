@@ -12,8 +12,8 @@ import { getPreview } from '../utils/getPreview';
 import { getData } from '../utils/getData';
 
 export type DurationValues = {
-    milliseconds: number;
-    seconds: number;
+    milliseconds?: number;
+    seconds?: number;
 };
 export type Duration =
     | 'very slow'

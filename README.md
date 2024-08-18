@@ -51,10 +51,10 @@ export default App;
 -   `animateTo` (string, optional):
     The target code content to animate to. If not provided, only the initial content will be displayed.
 
--   `duration` (`very slow' | 'slow' | 'normal' | 'fast' | 'very fast' | number``, optional):
+-   `duration` (`very slow' | 'slow' | 'normal' | 'fast' | 'very fast' | `number`, optional):
     The duration of the animation. Specify the duration in seconds or milliseconds.
 
--   `variant` (`move later`|`move instantly`, optional):
+-   `variant` (`move later` | `move instantly`, optional):
     The animation variant or style. Customize the transition effect between the initial and target content.
 
 -   `styles` (any, optional):
@@ -86,7 +86,7 @@ Here are a few examples of how you can use MagicMotion:
     initialContent="const x = 10;"
     animateTo="const y = 20;"
     duration="slow"
-    variant="slide"
+    variant="move later"
 />
 ```
 
