@@ -5,6 +5,7 @@ node_modules
 .eslintignore
 .gitignore
 dist
+README.md
 .all-contributorsrc
 package-lock.json
 yarn.lock
