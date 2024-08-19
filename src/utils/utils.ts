@@ -88,10 +88,6 @@ export const positionToCoordinate = (
 };
 
 export const getLanguage = (codeHighlight: CodeHighlight) => {
-    if (codeHighlight && codeHighlight.customLanguage) {
-        return codeHighlight.customLanguage;
-    }
-
     if (codeHighlight && typeof codeHighlight.languageName === 'string') {
         return Prism.languages[codeHighlight.languageName];
     }
