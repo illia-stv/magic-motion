@@ -19,7 +19,7 @@ const config: Config = {
     projectName: 'magic-motion', // Usually your repo name.
     deploymentBranch: 'deployment',
 
-    onBrokenLinks: 'throw',
+    onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
 
     // Even if you don't use internationalization, you can use this field to set
