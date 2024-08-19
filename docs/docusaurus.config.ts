@@ -16,7 +16,7 @@ const config: Config = {
     // If you aren't using GitHub pages, you don't need these.
     organizationName: 'illia-stv', // Usually your GitHub org/user name.
     projectName: 'magic-motion', // Usually your repo name.
-    deploymentBranch: 'main',
+    deploymentBranch: 'deployment',
     trailingSlash: false,
 
     onBrokenLinks: 'warn',
