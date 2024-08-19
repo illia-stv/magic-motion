@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { type Grammar } from 'prismjs';
 import CodeAnimation from './CodeAnimation';
 import PlainTextAnimation from './PlainTextAnimation';
 import {
@@ -25,7 +24,6 @@ export type Duration =
 export type Variant = 'move later' | 'move instantly';
 export type CodeHighlight = {
     languageName?: string;
-    customLanguage?: Grammar;
 };
 
 export interface MagicMotionConfig {
