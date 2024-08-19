@@ -4,6 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
     title: 'Magic Motion',
+    staticDirectories: ['static'],
     tagline: 'Bring magic to the content transition',
     favicon: 'img/favicon.ico',
     // Set the production url of your site here

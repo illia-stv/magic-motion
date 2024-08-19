@@ -2,9 +2,13 @@
 sidebar_position: 1
 ---
 
+import ReactPlayer from 'react-player'
+
 # Tutorial Intro
 
 Discover **Magic Motion** in less than 5 minutes.
+
+<ReactPlayer playing controls url="../video/demo.mp4" />
 
 ## Getting Started
 
