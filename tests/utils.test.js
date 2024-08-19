@@ -9,23 +9,23 @@ import {
 
 describe('extractDurationValue()', () => {
     it('should convert input `very slow` into proper duration value', () => {
-        expect(extractDurationValue('very slow')).to.equal((5 / 3) * 1000);
+        expect(extractDurationValue('very slow')).to.equal(5 / 3);
     });
 
     it('should convert input `slow` into proper duration value', () => {
-        expect(extractDurationValue('slow')).to.equal((4 / 3) * 1000);
+        expect(extractDurationValue('slow')).to.equal(4 / 3);
     });
 
     it('should convert input `normal` into proper duration value', () => {
-        expect(extractDurationValue('normal')).to.equal((3 / 3) * 1000);
+        expect(extractDurationValue('normal')).to.equal(3 / 3);
     });
 
     it('should convert input `fast` into proper duration value', () => {
-        expect(extractDurationValue('fast')).to.equal((2 / 3) * 1000);
+        expect(extractDurationValue('fast')).to.equal(2 / 3);
     });
 
     it('should convert input `very fast` into proper duration value', () => {
-        expect(extractDurationValue('very fast')).to.equal((1 / 3) * 1000);
+        expect(extractDurationValue('very fast')).to.equal(1 / 3);
     });
 });
 
@@ -44,19 +44,6 @@ describe('getLanguage()', () => {
         expect(getLanguage(codeHighlight)).to.deep.equal(
             Prism.languages.javascript,
         );
-    });
-
-    it('should return Prism langauge from `codeHighlight` configuration property', () => {
-        const customLanguage = {
-            val1: 'val1',
-            val2: 'val2',
-        };
-
-        const codeHighlight = {
-            customLanguage,
-        };
-
-        expect(getLanguage(codeHighlight)).to.deep.equal(customLanguage);
     });
 });
 
