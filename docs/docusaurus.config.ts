@@ -1,12 +1,15 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import 'dotenv/config';
 
 const config: Config = {
     title: 'Magic Motion',
     tagline: 'Bring magic to the content transition',
     favicon: 'img/favicon.ico',
-
+    customFields: {
+        teamEmail: process.env.EMAIL,
+    },
     // Set the production url of your site here
     url: 'https://illia-stv.github.io',
     // Set the /<baseUrl>/ pathname under which your site is served
@@ -18,6 +21,7 @@ const config: Config = {
     organizationName: 'illia-stv', // Usually your GitHub org/user name.
     projectName: 'magic-motion', // Usually your repo name.
     deploymentBranch: 'main',
+    trailingSlash: false,
 
     onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
