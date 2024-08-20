@@ -10,35 +10,6 @@ import {
 import { getPreview } from '../utils/getPreview';
 import { getData } from '../utils/getData';
 
-export type DurationValues = {
-    milliseconds?: number;
-    seconds?: number;
-};
-export type Duration =
-    | 'very slow'
-    | 'slow'
-    | 'normal'
-    | 'fast'
-    | 'very fast'
-    | DurationValues;
-export type Variant = 'move later' | 'move instantly';
-export type CodeHighlight = {
-    languageName?: string;
-};
-
-export interface MagicMotionConfig {
-    initialContent: string;
-    animateTo?: string;
-    duration?: Duration;
-    variant?: Variant;
-    styles?: any;
-    fontSize?: number;
-    codeHighlight?: CodeHighlight;
-    children?: JSX.Element;
-    onAnimationFinished?: (arg: false) => void;
-    onAnimationStart?: (arg: true) => void;
-}
-
 const MagicMotion = ({
     initialContent,
     animateTo,
@@ -286,5 +257,34 @@ type AnimationState =
     | 'MOVE'
     | 'ADD'
     | 'ANIMATION_FINISHED';
+
+export type DurationValues = {
+    milliseconds?: number;
+    seconds?: number;
+};
+export type Duration =
+    | 'very slow'
+    | 'slow'
+    | 'normal'
+    | 'fast'
+    | 'very fast'
+    | DurationValues;
+export type Variant = 'move later' | 'move instantly';
+export type CodeHighlight = {
+    languageName?: string;
+};
+
+export interface MagicMotionConfig {
+    initialContent: string;
+    animateTo?: string;
+    duration?: Duration;
+    variant?: Variant;
+    styles?: any;
+    fontSize?: number;
+    codeHighlight?: CodeHighlight;
+    children?: JSX.Element;
+    onAnimationFinished?: (arg: false) => void;
+    onAnimationStart?: (arg: true) => void;
+}
 
 export default MagicMotion;
