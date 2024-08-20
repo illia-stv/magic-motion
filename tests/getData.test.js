@@ -5,7 +5,7 @@ describe('getData()', () => {
         const oldContent = 'hello';
         const newContent = 'hello';
 
-        const { initialAnimationTokens, isThereMovedItems } = getData({
+        const { initialAnimationTokens } = getData({
             oldContent,
             newContent,
         });
@@ -59,8 +59,294 @@ describe('getData()', () => {
                 },
             ],
         ]);
+    });
 
-        expect(isThereMovedItems).toBe(true);
+    test('should moved letters and add letters', () => {
+        const oldContent = 'qwe';
+        const newContent = 'q1w2e3';
+
+        const { finalAnimationTokens } = getData({
+            oldContent,
+            newContent,
+        });
+
+        expect(finalAnimationTokens).to.deep.equal([
+            [
+                {
+                    character: 'q',
+                    state: 0,
+                    id: 0,
+                    nextPosition: 0,
+                    nextRaw: 0,
+                },
+                {
+                    character: '1',
+                    state: 1,
+                    id: 1,
+                    nextPosition: 1,
+                    nextRaw: 0,
+                },
+                {
+                    character: 'w',
+                    state: 0,
+                    id: 2,
+                    nextPosition: 2,
+                    nextRaw: 0,
+                },
+                {
+                    character: '2',
+                    state: 1,
+                    id: 3,
+                    nextPosition: 3,
+                    nextRaw: 0,
+                },
+                {
+                    character: 'e',
+                    state: 0,
+                    id: 4,
+                    nextPosition: 4,
+                    nextRaw: 0,
+                },
+                {
+                    character: '3',
+                    state: 1,
+                    id: 5,
+                    nextPosition: 5,
+                    nextRaw: 0,
+                },
+            ],
+        ]);
+    });
+
+    test('should remove all letters and add new without moving', () => {
+        const oldContent = 'qwe';
+        const newContent = '123';
+
+        const { finalAnimationTokens } = getData({
+            oldContent,
+            newContent,
+        });
+
+        expect(finalAnimationTokens).to.deep.equal([
+            [
+                {
+                    character: '1',
+                    state: 1,
+                    id: 3,
+                    nextPosition: 0,
+                    nextRaw: 0,
+                },
+                {
+                    character: '2',
+                    state: 1,
+                    id: 4,
+                    nextPosition: 1,
+                    nextRaw: 0,
+                },
+                {
+                    character: '3',
+                    state: 1,
+                    id: 5,
+                    nextPosition: 2,
+                    nextRaw: 0,
+                },
+            ],
+        ]);
+    });
+
+    test('should remove letters', () => {
+        const oldContent = 'q1w2e3';
+        const newContent = 'qwe';
+
+        const { finalAnimationTokens } = getData({
+            oldContent,
+            newContent,
+        });
+
+        expect(finalAnimationTokens).to.deep.equal([
+            [
+                {
+                    character: 'q',
+                    state: 0,
+                    id: 0,
+                    nextPosition: 0,
+                    nextRaw: 0,
+                },
+                {
+                    character: 'w',
+                    state: 0,
+                    id: 2,
+                    nextPosition: 1,
+                    nextRaw: 0,
+                },
+                {
+                    character: 'e',
+                    state: 0,
+                    id: 4,
+                    nextPosition: 2,
+                    nextRaw: 0,
+                },
+            ],
+        ]);
+    });
+
+    test('should merge two lines into one', () => {
+        const oldContent = `q1w
+2e3`;
+        const newContent = 'qwe';
+
+        const { finalAnimationTokens } = getData({
+            oldContent,
+            newContent,
+        });
+
+        expect(finalAnimationTokens).to.deep.equal([
+            [
+                {
+                    character: 'q',
+                    state: 0,
+                    id: 0,
+                    nextPosition: 0,
+                    nextRaw: 0,
+                },
+                {
+                    character: 'w',
+                    state: 0,
+                    id: 2,
+                    nextPosition: 1,
+                    nextRaw: 0,
+                },
+                {
+                    character: 'e',
+                    state: 0,
+                    id: 5,
+                    nextPosition: 2,
+                    nextRaw: 0,
+                },
+            ],
+        ]);
+    });
+
+    test('should split one line into two lines', () => {
+        const oldContent = 'qwe';
+        const newContent = `q1w
+2e3`;
+
+        const { finalAnimationTokens } = getData({
+            oldContent,
+            newContent,
+        });
+
+        expect(finalAnimationTokens).to.deep.equal([
+            [
+                {
+                    character: 'q',
+                    state: 0,
+                    id: 0,
+                    nextPosition: 0,
+                    nextRaw: 0,
+                },
+                {
+                    character: '1',
+                    state: 1,
+                    id: 1,
+                    nextPosition: 1,
+                    nextRaw: 0,
+                },
+                {
+                    character: 'w',
+                    state: 0,
+                    id: 2,
+                    nextPosition: 2,
+                    nextRaw: 0,
+                },
+            ],
+            [
+                {
+                    character: '2',
+                    state: 1,
+                    id: 4,
+                    nextPosition: 0,
+                    nextRaw: 1,
+                },
+                {
+                    character: 'e',
+                    state: 0,
+                    id: 5,
+                    nextPosition: 1,
+                    nextRaw: 1,
+                },
+                {
+                    character: '3',
+                    state: 1,
+                    id: 6,
+                    nextPosition: 2,
+                    nextRaw: 1,
+                },
+            ],
+        ]);
+    });
+
+    test('should work with empty lines', () => {
+        const oldContent = 'qwe';
+        const newContent = `q1w
+
+2e3`;
+
+        const { finalAnimationTokens } = getData({
+            oldContent,
+            newContent,
+        });
+
+        expect(finalAnimationTokens).to.deep.equal([
+            [
+                {
+                    character: 'q',
+                    state: 0,
+                    id: 0,
+                    nextPosition: 0,
+                    nextRaw: 0,
+                },
+                {
+                    character: '1',
+                    state: 1,
+                    id: 1,
+                    nextPosition: 1,
+                    nextRaw: 0,
+                },
+                {
+                    character: 'w',
+                    state: 0,
+                    id: 2,
+                    nextPosition: 2,
+                    nextRaw: 0,
+                },
+            ],
+            [],
+            [
+                {
+                    character: '2',
+                    state: 1,
+                    id: 5,
+                    nextPosition: 0,
+                    nextRaw: 2,
+                },
+                {
+                    character: 'e',
+                    state: 0,
+                    id: 6,
+                    nextPosition: 1,
+                    nextRaw: 2,
+                },
+                {
+                    character: '3',
+                    state: 1,
+                    id: 7,
+                    nextPosition: 2,
+                    nextRaw: 2,
+                },
+            ],
+        ]);
     });
 
     test('should detect added characters', () => {
