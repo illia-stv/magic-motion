@@ -1,8 +1,9 @@
 <p align="center">
-<img width="475" alt="Screenshot 2024-08-22 at 20 20 07" src="https://github.com/user-attachments/assets/dd85faea-9afe-4b39-abd6-53f4b95814ee">
+<img width="475" alt="Screenshot 2024-08-22 at 20 20 07" src="https://github.com/user-attachments/assets/8328219e-c2aa-41cd-8fdf-fa7352009b80">
   <br/>
   <br/>
 </p>
+
 
 <p align="center">
     <a href="https://github.com/illia-stv/magic-motion/actions"><img alt="Build" src="https://img.shields.io/badge/passsed-green?label=build"</a>
