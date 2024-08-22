@@ -9,9 +9,9 @@ Remember not to update the state of the `animateTo` property until the animation
 ## Example
 
 ```jsx
+import { useState } from "react";
 import { MagicMotion } from "magic-motion";
 import "prismjs/themes/prism.css";
-import { useState } from "react";
 
 const contents = [
   'const sum = (a, b) => a + b;',
