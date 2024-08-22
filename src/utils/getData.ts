@@ -6,7 +6,7 @@ import {
     CodeHighlight,
     TokenizedRaws,
 } from '../components/MagicMotion';
-import { getLanguage, letterizeTokens, mergeArrays } from './utils';
+import { generateID, getLanguage, letterizeTokens, mergeArrays } from './utils';
 
 export const initializeAnimationTokens = (diff: Array<DiffMatchPatch.Diff>) => {
     const initialTokens: Array<PartialAnimationToken> = [];
@@ -20,7 +20,9 @@ export const initializeAnimationTokens = (diff: Array<DiffMatchPatch.Diff>) => {
             initialTokens.push({
                 character,
                 state,
-                id,
+                id: generateID(),
+                opacity: 1,
+                transition: 1,
             });
             id++;
         });
@@ -108,10 +110,12 @@ export const getData = ({
     oldContent,
     newContent,
     codeHighlight,
+    nextPositionTokens,
 }: {
     oldContent: string;
     newContent: string;
     codeHighlight?: CodeHighlight;
+    nextPositionTokens: TokenizedRaws;
 }): {
     initialAnimationTokens: TokenizedRaws;
     finalAnimationTokens: TokenizedRaws;

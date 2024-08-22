@@ -1,15 +1,43 @@
-import { motion } from 'framer-motion';
+'use client';
 import FakeLine from './FakeLine';
-import type { TokenizedRaw, TokenizedRaws } from './MagicMotion';
+import type {
+    AnimationToken,
+    TokenizedRaw,
+    TokenizedRaws,
+} from './MagicMotion';
 
 const AnimationView = ({
     tokenizedRaws,
     animationState,
-    animationDuration,
     unitWidth,
     unitHeight,
     fontSize,
 }: AnimationViewProps) => {
+    const handleRef = (
+        el: HTMLSpanElement | null,
+        x: number,
+        y: number,
+        state: number,
+    ) => {
+        if (el && state === -1 && animationState === 'REMOVE') {
+            setTimeout(() => (el.style.opacity = '0'), 50);
+        }
+
+        if (
+            el &&
+            state === 0 &&
+            x !== undefined &&
+            y !== undefined &&
+            animationState === 'MOVE'
+        ) {
+            el.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        }
+
+        if (el && state === 1 && animationState === 'ADD') {
+            setTimeout(() => (el.style.opacity = '1'), 50);
+        }
+    };
+
     return (
         <>
             {tokenizedRaws.map(
@@ -19,39 +47,52 @@ const AnimationView = ({
                         style={{ height: unitHeight, display: 'block' }}
                     >
                         {tokenizedRaw.length !== 0 ? (
-                            tokenizedRaw.map((token: any) => {
-                                const { x, y, opacity, character, state, id } =
-                                    token;
-                                const isAdded = state === 1;
-                                const isMoved =
-                                    animationState === 'ADD' && state === 0;
+                            tokenizedRaw.map(
+                                (token: AnimationToken, index: number) => {
+                                    const {
+                                        x,
+                                        y,
+                                        opacity,
+                                        transition,
+                                        character,
+                                        state,
+                                        id,
+                                    } = token;
+                                    const isMoved =
+                                        animationState === 'ADD' && state === 0;
 
-                                return (
-                                    <motion.span
-                                        animate={{ x, y, opacity }}
-                                        className={token.class}
-                                        initial={isAdded && { opacity: 0 }}
-                                        style={{
-                                            display: 'inline-block',
-                                            fontFamily: 'Monaco, monospace',
-                                            fontSize: `${fontSize}px`,
-                                            width: unitWidth,
-                                            height: unitHeight,
-                                            x: isMoved ? x : undefined,
-                                            y: isMoved ? y : undefined,
-                                            background: 'unset',
-                                        }}
-                                        transition={{
-                                            duration: animationDuration,
-                                        }}
-                                        key={id}
-                                    >
-                                        {character === ' '
-                                            ? '\u00A0'
-                                            : character}
-                                    </motion.span>
-                                );
-                            })
+                                    return (
+                                        <span
+                                            ref={(el) =>
+                                                handleRef(
+                                                    el,
+                                                    x as number,
+                                                    y as number,
+                                                    state,
+                                                )
+                                            }
+                                            className={token.class}
+                                            style={{
+                                                display: 'inline-block',
+                                                fontFamily: 'Monaco, monospace',
+                                                fontSize: `${fontSize}px`,
+                                                opacity,
+                                                width: unitWidth,
+                                                height: unitHeight,
+                                                ...(isMoved && {
+                                                    transform: `translateX(${x}px) translateY(${y}px)`,
+                                                }),
+                                                transition: `${transition}s`,
+                                            }}
+                                            key={id}
+                                        >
+                                            {character === ' '
+                                                ? '\u00A0'
+                                                : character}
+                                        </span>
+                                    );
+                                },
+                            )
                         ) : (
                             <FakeLine height={unitHeight} />
                         )}

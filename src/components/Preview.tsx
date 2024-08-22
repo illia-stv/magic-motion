@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import FakeLine from './FakeLine';
 
 const Preview = ({ preview, unitWidth, unitHeight, fontSize }: any) => {
@@ -13,7 +12,7 @@ const Preview = ({ preview, unitWidth, unitHeight, fontSize }: any) => {
                         tokenizedRaw.map((token: any) => {
                             const { character, class: className, id } = token;
                             return (
-                                <motion.span
+                                <span
                                     className={className}
                                     style={{
                                         display: 'inline-block',
@@ -26,7 +25,7 @@ const Preview = ({ preview, unitWidth, unitHeight, fontSize }: any) => {
                                     key={id}
                                 >
                                     {character === ' ' ? '\u00A0' : character}
-                                </motion.span>
+                                </span>
                             );
                         })
                     ) : (
