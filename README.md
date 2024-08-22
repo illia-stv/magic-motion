@@ -10,6 +10,7 @@
     <a href="https://github.com/illia-stv/magic-motion/blob/main/LICENSE"><img alt="GitHub" src="https://img.shields.io/badge/MIT-blue?style=flat&label=license"></a>
     <a href="https://illia-stv.github.io/magic-motion/docs/intro"><img alt="Documentation" src="https://img.shields.io/badge/online-green?label=website"></a>
     <a href="https://github.com/illia-stv/magic-motion/releases"><img alt="GitHub release" src="https://img.shields.io/badge/v1.0.13-blue?label=release"></a>
+    <a href="https://www.npmjs.com/package/magic-motion"><img alt="GitHub release" src="https://img.shields.io/badge/npm-red?label=package"></a>
 </p>
 
 MagicMotion is a powerful and flexible code animation library that allows developers to easily create dynamic code animations. Whether you're building educational tools, showcasing code snippets, or creating interactive tutorials, MagicMotion makes it easy to animate code transitions with smooth and customizable effects.
