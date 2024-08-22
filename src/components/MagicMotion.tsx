@@ -110,11 +110,6 @@ const MagicMotion = ({
                 nextPositionTokens,
             });
 
-            // console.log({
-            //     initialAnimationTokens,
-            //     finalAnimationTokens,
-            // });
-
             setIsThereMovedItems(isThereMovedItems);
             setNextPositionTokens(finalAnimationTokens);
             setTokenizedRaws(initialAnimationTokens);
