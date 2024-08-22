@@ -40,7 +40,7 @@ import { MagicMotion } from 'magic-motion';
 
 ## Content initialization
 
-By providing a string to the `initialContent`` property, you define the initial state of the `MagicMotion` component:
+By providing a string to the `initialContent` property, you define the initial state of the `MagicMotion` component:
 
 ```jsx
 const App = () => {
