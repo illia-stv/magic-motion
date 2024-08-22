@@ -5,10 +5,10 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/illia-stv/magic-motion/actions"><img alt="Build" src="https://img.shields.io/circleci/build/github/huggingface/transformers/main"></a>
-    <a href="https://github.com/illia-stv/magic-motion/blob/main/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/huggingface/transformers.svg?color=blue"></a>
-    <a href="https://illia-stv.github.io/magic-motion/docs/intro"><img alt="Documentation" src="https://img.shields.io/website/http/huggingface.co/docs/transformers/index.svg?down_color=red&down_message=offline&up_message=online"></a>
-    <a href="https://github.com/illia-stv/magic-motion/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/huggingface/transformers.svg"></a>
+    <a href="https://github.com/illia-stv/magic-motion/actions"><img alt="Build" src="https://img.shields.io/badge/passing-build?style=flat&label=build&color=%23111"</a>
+    <a href="https://github.com/illia-stv/magic-motion/blob/main/LICENSE"><img alt="GitHub" src="https://img.shields.io/badge/MIT-License?style=flat&label=license&color=%23111"></a>
+    <a href="https://illia-stv.github.io/magic-motion/docs/intro"><img alt="Documentation" src="https://img.shields.io/badge/online-website?style=flat&label=website&color=%23111"></a>
+    <a href="https://github.com/illia-stv/magic-motion/releases"><img alt="GitHub release" src="https://img.shields.io/badge/v1.0.13-release?style=flat&label=release&color=%23111"></a>
 </p>
 
 MagicMotion is a powerful and flexible code animation library that allows developers to easily create dynamic code animations. Whether you're building educational tools, showcasing code snippets, or creating interactive tutorials, MagicMotion makes it easy to animate code transitions with smooth and customizable effects.
