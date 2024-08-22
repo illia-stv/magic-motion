@@ -74,6 +74,18 @@ export const mergeArrays = (arr1: TokenizedRaws, arr2: TokenizedRaws) => {
     );
 };
 
+export const generateID = (length = 8): string => {
+    const characters =
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(
+            Math.floor(Math.random() * characters.length),
+        );
+    }
+    return result;
+};
+
 export const positionToCoordinate = (
     column: number,
     raw: number,

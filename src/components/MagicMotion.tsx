@@ -51,23 +51,27 @@ const MagicMotion = ({
     };
 
     useEffect(() => {
-        setLastAnimatedContent(animateTo);
+        if (animationState !== 'NOT_ANIMATED') {
+            clearTimeouts();
+            setAnimationState('INTERRUPTED');
 
-        // if (animationState !== 'NOT_ANIMATED') {
-        //     clearTimeouts();
-        //     return;
-        // }
+            return;
+        }
 
         if (animateTo !== undefined) {
-            setPreview(undefined);
-            processData();
-            setAnimationState('REMOVE');
-
-            if (onAnimationStart) {
-                onAnimationStart(true);
-            }
+            init();
         }
     }, [animateTo]);
+
+    const init = () => {
+        setPreview(undefined);
+        processData();
+        setAnimationState('REMOVE');
+
+        if (onAnimationStart) {
+            onAnimationStart(true);
+        }
+    };
 
     useEffect(() => {
         if (animationState !== 'NOT_ANIMATED') {
@@ -103,7 +107,13 @@ const MagicMotion = ({
                 oldContent,
                 newContent: animateTo,
                 codeHighlight,
+                nextPositionTokens,
             });
+
+            // console.log({
+            //     initialAnimationTokens,
+            //     finalAnimationTokens,
+            // });
 
             setIsThereMovedItems(isThereMovedItems);
             setNextPositionTokens(finalAnimationTokens);
@@ -115,6 +125,8 @@ const MagicMotion = ({
         orchestrateAnimation(animationState, variant);
 
         if (animationState === 'NOT_ANIMATED') {
+            setLastAnimatedContent(animateTo);
+
             if (onAnimationFinished) {
                 onAnimationFinished(false);
             }
@@ -123,8 +135,8 @@ const MagicMotion = ({
 
     const orchestrateAnimation = (animationState: string, variant?: string) => {
         if (animationState === 'INTERRUPTED') {
-            processData();
-            setAnimationState('NOT_ANIMATED');
+            init();
+            return;
         }
 
         if (variant === undefined || variant === 'move later') {
@@ -186,36 +198,24 @@ const MagicMotion = ({
         };
     };
 
-    const init = actionWrapper(() => {
-        const updatedTokenizedRaws = Array.from(tokenizedRaws);
-
-        updatedTokenizedRaws.forEach((raw) => {
-            raw.forEach((token) => {
-                if (token.state === -1) {
-                    token.opacity = 1;
-                }
-
-                if (token.state === 0) {
-                    token.x = 0;
-                    token.y = 0;
-                }
-
-                if (token.state === 1) {
-                    token.opacity = 0;
-                }
-            });
-        });
-
-        setTokenizedRaws(updatedTokenizedRaws);
-    });
-
     const remove = actionWrapper(() => {
         const updatedTokenizedRaws = Array.from(tokenizedRaws);
 
         updatedTokenizedRaws.forEach((raw) => {
             raw.forEach((token) => {
                 if (token.state === -1) {
+                    token.opacity = 1;
+                    token.transition = animationDuration;
+                }
+
+                if (token.state === 0) {
+                    token.opacity = 1;
+                    token.transition = 0;
+                }
+
+                if (token.state === 1) {
                     token.opacity = 0;
+                    token.transition = 0;
                 }
             });
         });
@@ -237,8 +237,19 @@ const MagicMotion = ({
                         unitWidth,
                     );
 
-                    token.x = x;
-                    token.y = y;
+                    if (token.state === -1) {
+                        token.opacity = 0;
+                    }
+
+                    if (token.state === 0) {
+                        token.transition = animationDuration;
+                        token.x = x;
+                        token.y = y;
+                    }
+
+                    if (token.state === 1) {
+                        token.opacity = 0;
+                    }
                 }
             });
         });
@@ -252,12 +263,18 @@ const MagicMotion = ({
         updatedTokenizedRaws.forEach((raw: any) => {
             raw.forEach((token: AnimationToken) => {
                 if (token.state === 1) {
-                    token.opacity = 1;
+                    token.transition = animationDuration;
+                    token.opacity = 0;
                 }
 
                 if (token.state === 0) {
+                    token.transition = 0;
                     token.x = 0;
                     token.y = 0;
+                }
+
+                if (token.state === -1) {
+                    token.opacity = 0;
                 }
             });
         });
@@ -303,12 +320,13 @@ export type AnimationToken = {
     x?: number | string;
     y?: number | string;
     opacity?: number;
+    transition?: number;
     nextPosition?: number;
     currentPosition: number;
     nextRaw: number;
     currentRaw: number;
     state: number;
-    id: number;
+    id: string;
     class?: string;
 };
 
