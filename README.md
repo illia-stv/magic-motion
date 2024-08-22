@@ -13,9 +13,12 @@
     <a href="https://www.npmjs.com/package/magic-motion"><img alt="GitHub release" src="https://img.shields.io/badge/npm-red?label=package"></a>
 </p>
 
-MagicMotion is a powerful and flexible code animation library that allows developers to easily create dynamic code animations. Whether you're building educational tools, showcasing code snippets, or creating interactive tutorials, MagicMotion makes it easy to animate code transitions with smooth and customizable effects.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/016a833f-b489-46cd-831e-f873c68a4f01" alt="20240820_011917-ezgif com-video-to-gif-converter">
+</p>
 
-https://github.com/user-attachments/assets/9180821b-f85b-47be-8577-a482172a5e12
+
+MagicMotion is a powerful and flexible code animation library that allows developers to easily create dynamic code animations. Whether you're building educational tools, showcasing code snippets, or creating interactive tutorials, MagicMotion makes it easy to animate code transitions with smooth and customizable effects.
 
 ## Installation
 
