@@ -10,52 +10,68 @@ describe('getData()', () => {
             newContent,
         });
 
-        expect(initialAnimationTokens).to.deep.equal([
+        const ids = initialAnimationTokens.map((raw) => {
+            return raw.map((token) => {
+                return token.id;
+            });
+        });
+
+        expect(initialAnimationTokens).to.have.deep.members([
             [
                 {
                     character: 'h',
                     currentPosition: 0,
                     currentRaw: 0,
                     nextPosition: 0,
+                    id: ids[0][0],
                     nextRaw: 0,
                     state: 0,
-                    id: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: 'e',
                     currentPosition: 1,
                     currentRaw: 0,
+                    id: ids[0][1],
                     nextPosition: 1,
                     nextRaw: 0,
                     state: 0,
-                    id: 1,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: 'l',
                     currentPosition: 2,
+                    id: ids[0][2],
                     currentRaw: 0,
                     nextPosition: 2,
                     nextRaw: 0,
                     state: 0,
-                    id: 2,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: 'l',
                     currentPosition: 3,
+                    id: ids[0][3],
                     currentRaw: 0,
                     nextPosition: 3,
                     nextRaw: 0,
                     state: 0,
-                    id: 3,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: 'o',
                     currentPosition: 4,
+                    id: ids[0][4],
                     currentRaw: 0,
                     nextPosition: 4,
                     nextRaw: 0,
                     state: 0,
-                    id: 4,
+                    opacity: 1,
+                    transition: 1,
                 },
             ],
         ]);
@@ -70,49 +86,67 @@ describe('getData()', () => {
             newContent,
         });
 
+        const ids = finalAnimationTokens.map((raw) => {
+            return raw.map((token) => {
+                return token.id;
+            });
+        });
+
         expect(finalAnimationTokens).to.deep.equal([
             [
                 {
                     character: 'q',
                     state: 0,
-                    id: 0,
+                    id: ids[0][0],
                     nextPosition: 0,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: '1',
                     state: 1,
-                    id: 1,
+                    id: ids[0][1],
                     nextPosition: 1,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: 'w',
                     state: 0,
-                    id: 2,
+                    id: ids[0][2],
                     nextPosition: 2,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: '2',
                     state: 1,
-                    id: 3,
+                    id: ids[0][3],
                     nextPosition: 3,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: 'e',
                     state: 0,
-                    id: 4,
+                    id: ids[0][4],
                     nextPosition: 4,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: '3',
                     state: 1,
-                    id: 5,
+                    id: ids[0][5],
                     nextPosition: 5,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
             ],
         ]);
@@ -127,28 +161,40 @@ describe('getData()', () => {
             newContent,
         });
 
+        const ids = finalAnimationTokens.map((raw) => {
+            return raw.map((token) => {
+                return token.id;
+            });
+        });
+
         expect(finalAnimationTokens).to.deep.equal([
             [
                 {
                     character: '1',
                     state: 1,
-                    id: 3,
+                    id: ids[0][0],
                     nextPosition: 0,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: '2',
                     state: 1,
-                    id: 4,
+                    id: ids[0][1],
                     nextPosition: 1,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: '3',
                     state: 1,
-                    id: 5,
+                    id: ids[0][2],
                     nextPosition: 2,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
             ],
         ]);
@@ -163,28 +209,40 @@ describe('getData()', () => {
             newContent,
         });
 
+        const ids = finalAnimationTokens.map((raw) => {
+            return raw.map((token) => {
+                return token.id;
+            });
+        });
+
         expect(finalAnimationTokens).to.deep.equal([
             [
                 {
                     character: 'q',
                     state: 0,
-                    id: 0,
+                    id: ids[0][0],
                     nextPosition: 0,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: 'w',
                     state: 0,
-                    id: 2,
+                    id: ids[0][1],
                     nextPosition: 1,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: 'e',
                     state: 0,
-                    id: 4,
+                    id: ids[0][2],
                     nextPosition: 2,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
             ],
         ]);
@@ -200,28 +258,40 @@ describe('getData()', () => {
             newContent,
         });
 
+        const ids = finalAnimationTokens.map((raw) => {
+            return raw.map((token) => {
+                return token.id;
+            });
+        });
+
         expect(finalAnimationTokens).to.deep.equal([
             [
                 {
                     character: 'q',
                     state: 0,
-                    id: 0,
+                    id: ids[0][0],
                     nextPosition: 0,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: 'w',
                     state: 0,
-                    id: 2,
+                    id: ids[0][1],
                     nextPosition: 1,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: 'e',
                     state: 0,
-                    id: 5,
+                    id: ids[0][2],
                     nextPosition: 2,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
             ],
         ]);
@@ -237,51 +307,69 @@ describe('getData()', () => {
             newContent,
         });
 
+        const ids = finalAnimationTokens.map((raw) => {
+            return raw.map((token) => {
+                return token.id;
+            });
+        });
+
         expect(finalAnimationTokens).to.deep.equal([
             [
                 {
                     character: 'q',
                     state: 0,
-                    id: 0,
+                    id: ids[0][0],
                     nextPosition: 0,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: '1',
                     state: 1,
-                    id: 1,
+                    id: ids[0][1],
                     nextPosition: 1,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: 'w',
                     state: 0,
-                    id: 2,
+                    id: ids[0][2],
                     nextPosition: 2,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
             ],
             [
                 {
                     character: '2',
                     state: 1,
-                    id: 4,
+                    id: ids[1][0],
                     nextPosition: 0,
                     nextRaw: 1,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: 'e',
                     state: 0,
-                    id: 5,
+                    id: ids[1][1],
                     nextPosition: 1,
                     nextRaw: 1,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: '3',
                     state: 1,
-                    id: 6,
+                    id: ids[1][2],
                     nextPosition: 2,
                     nextRaw: 1,
+                    opacity: 1,
+                    transition: 1,
                 },
             ],
         ]);
@@ -298,28 +386,40 @@ describe('getData()', () => {
             newContent,
         });
 
+        const ids = finalAnimationTokens.map((raw) => {
+            return raw.map((token) => {
+                return token.id;
+            });
+        });
+
         expect(finalAnimationTokens).to.deep.equal([
             [
                 {
                     character: 'q',
                     state: 0,
-                    id: 0,
+                    id: ids[0][0],
                     nextPosition: 0,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: '1',
                     state: 1,
-                    id: 1,
+                    id: ids[0][1],
                     nextPosition: 1,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: 'w',
                     state: 0,
-                    id: 2,
+                    id: ids[0][2],
                     nextPosition: 2,
                     nextRaw: 0,
+                    opacity: 1,
+                    transition: 1,
                 },
             ],
             [],
@@ -327,23 +427,29 @@ describe('getData()', () => {
                 {
                     character: '2',
                     state: 1,
-                    id: 5,
+                    id: ids[2][0],
                     nextPosition: 0,
                     nextRaw: 2,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: 'e',
                     state: 0,
-                    id: 6,
+                    id: ids[2][1],
                     nextPosition: 1,
                     nextRaw: 2,
+                    opacity: 1,
+                    transition: 1,
                 },
                 {
                     character: '3',
                     state: 1,
-                    id: 7,
+                    id: ids[2][2],
                     nextPosition: 2,
                     nextRaw: 2,
+                    opacity: 1,
+                    transition: 1,
                 },
             ],
         ]);
