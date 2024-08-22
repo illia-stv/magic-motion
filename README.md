@@ -1,14 +1,14 @@
 <p align="center">
-  <img width="537" alt="Screenshot 2024-08-22 at 19 35 52" src="https://github.com/user-attachments/assets/4a89783e-61d8-43ce-8e19-ab35f74ed9d7">
+<img width="475" alt="Screenshot 2024-08-22 at 20 20 07" src="https://github.com/user-attachments/assets/dd85faea-9afe-4b39-abd6-53f4b95814ee">
   <br/>
   <br/>
 </p>
 
 <p align="center">
-    <a href="https://github.com/illia-stv/magic-motion/actions"><img alt="Build" src="https://img.shields.io/badge/passing-build?style=flat&label=build&color=%23111"</a>
-    <a href="https://github.com/illia-stv/magic-motion/blob/main/LICENSE"><img alt="GitHub" src="https://img.shields.io/badge/MIT-License?style=flat&label=license&color=%23111"></a>
-    <a href="https://illia-stv.github.io/magic-motion/docs/intro"><img alt="Documentation" src="https://img.shields.io/badge/online-website?style=flat&label=website&color=%23111"></a>
-    <a href="https://github.com/illia-stv/magic-motion/releases"><img alt="GitHub release" src="https://img.shields.io/badge/v1.0.13-release?style=flat&label=release&color=%23111"></a>
+    <a href="https://github.com/illia-stv/magic-motion/actions"><img alt="Build" src="https://img.shields.io/badge/passsed-green?label=build"</a>
+    <a href="https://github.com/illia-stv/magic-motion/blob/main/LICENSE"><img alt="GitHub" src="https://img.shields.io/badge/MIT-blue?style=flat&label=license"></a>
+    <a href="https://illia-stv.github.io/magic-motion/docs/intro"><img alt="Documentation" src="https://img.shields.io/badge/online-green?label=website"></a>
+    <a href="https://github.com/illia-stv/magic-motion/releases"><img alt="GitHub release" src="https://img.shields.io/badge/v1.0.13-blue?label=release"></a>
 </p>
 
 MagicMotion is a powerful and flexible code animation library that allows developers to easily create dynamic code animations. Whether you're building educational tools, showcasing code snippets, or creating interactive tutorials, MagicMotion makes it easy to animate code transitions with smooth and customizable effects.
