@@ -18,7 +18,6 @@ const AnimationView = ({
         y: number,
         state: number,
     ) => {
-        console.log(el?.getAnimations());
         if (el && state === -1 && animationState === 'REMOVE') {
             setTimeout(() => (el.style.opacity = '0'), 50);
         }
